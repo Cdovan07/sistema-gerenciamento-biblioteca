@@ -8,6 +8,14 @@ public class Biblioteca {
     private ArrayList<Livro> livros = new ArrayList<>();
 
     public void cadastrarLivro(Livro livro) {
+
+        for (Livro livroExistente : livros) {
+            if (livroExistente.getCodigo() == livro.getCodigo()) {
+                System.out.println("Já existe um livro com esse código!");
+                return;
+            }
+        }
+
         livros.add(livro);
         System.out.println("Livro cadastrado com sucesso!");
     }
